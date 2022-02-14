@@ -28,9 +28,9 @@ if __name__ == "__main__":
     # Parameters for estimating the motion
     dt = 0.001
 
-    print('Starting position: x0 = {:.2f} m, y0 = {:.2f} m.'.format(x0,y0))
-    print('Initial v = {:.2f} m/s at {:.2f} degrees.'.format(v0, theta0))
-    print('Projection mass m = {:.2f}.'.format(m))
+    print(f"Starting position: x0 = {x0:.2f} m, y0 = {y0:.2f} m.")
+    print(f"Initial v = {v0:.2f} m/s at {theta0:.2f} degrees.")
+    print(f"Projection mass m = {m:.2f}.")
 
     # Start the simulation with the first step
 
@@ -51,12 +51,12 @@ if __name__ == "__main__":
     while y > 0:
 
         # Update the velocity components based on the acceleration
-        vx+= ax*dt
-        vy+= ay*dt
+        vx += ax*dt
+        vy += ay*dt
 
         # Update the position, assuming constant acceleration
         x += (vx*dt + 0.5*ax*dt*dt)
         y += (vy*dt + 0.5*ay*dt*dt)
 
     # Print out the final distance traveled
-    print('The range is {:.2f} m'.format(x-x0))
+    print(f"The range is {x-x0:.2f} m")
